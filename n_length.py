@@ -2,12 +2,12 @@
 # Turbo Intruder brute force string with N char length
 def queueRequests(target, wordlists):
     engine = RequestEngine(endpoint=target.endpoint,
-                           concurrentConnections=30,
+                           concurrentConnections=5,
                            requestsPerConnection=100,
                            pipeline=False,
                            maxQueueSize=10,
                            timeout=5,
-                           maxRetriesPerRequest=3
+                           maxRetriesPerRequest=2
                            )
     engine.start()
 
